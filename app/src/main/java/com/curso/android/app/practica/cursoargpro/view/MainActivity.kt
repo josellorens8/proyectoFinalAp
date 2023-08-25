@@ -3,9 +3,7 @@ package com.curso.android.app.practica.cursoargpro.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
 import com.curso.android.app.practica.cursoargpro.databinding.ActivityMainBinding
-import com.curso.android.app.practica.cursoargpro.model.Comparacion
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -21,8 +19,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnComparacion.setOnClickListener {
-            val primerCadena = binding.cadena1
-            val segundaCadena = binding.cadena2
-            mainViewModel.comparar(primerCadena, segundaCadena) }
+            val cadena1 = binding.cadena1.text.toString()
+            val cadena2 = binding.cadena2.text.toString()
+            mainViewModel.comparar(cadena1, cadena2)
+        }
     }
 }
